@@ -79,8 +79,11 @@ const getAllBlog = async (req, res) => {
   }
 };
 const getSearchBlog = async (req, res) => {
-  const {term} = req.query
-  console.log(term)
+  console.log(req.query);
+  const term = req.query.term;
+  console.log(term);
+ 
+
   try {
     const query = term
       ? {
@@ -98,7 +101,7 @@ const getSearchBlog = async (req, res) => {
       return res.status(404).send(responseMessage.error("No posts found"));
     }
 
-    // return res.status(200).send(responseMessage.success("Posts found", posts));
+     return res.status(200).send(responseMessage.success("Posts found", posts));
 
   } catch (error) {
     console.error("Error fetching posts:", error);

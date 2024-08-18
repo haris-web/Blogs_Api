@@ -6,5 +6,5 @@ router.route("/createblog").post(CreateBlog);
 router.route("/updateblog/:id").put(updateBlog);
 router.route("/deleteblog/:id").delete(deleteBlog);
 router.route("/blogs").get(getAllBlog);
-router.route("/blogs/:term").post(getSearchBlog);
+router.route("/blogslist").post(getSearchBlog);
 export default router;
